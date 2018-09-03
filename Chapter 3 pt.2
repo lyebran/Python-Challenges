@@ -1,0 +1,25 @@
+import turtle
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+wn.title("Don")
+don = turtle.Turtle()
+
+#Equilateral triangle
+for i in range(3):
+    don.forward(100)
+    don.right(120) #the outer angle of a triangle
+
+#Square
+for x in range(4):
+    don.forward(100)
+    don.left(90)
+
+don.left(180)
+for c in range(6):
+    don.forward(100)
+    don.left(60) #always outer angle
+don.forward(100)
+
+for v in range(8):
+    don.forward(100)
+    don.right(45)
