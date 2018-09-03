@@ -1,0 +1,11 @@
+#Program to make a star shape
+import turtle
+wn = turtle.Screen()
+wn.bgcolor("pink")
+wn.title("Star!")
+don = turtle.Turtle()
+don.color("red")
+
+for i in range(5):
+    don.forward(200)
+    don.right(144)
