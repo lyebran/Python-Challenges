@@ -1,0 +1,42 @@
+#Chapter 2.14 Exercises
+#1)
+word1 = "All "
+word2 = "work "
+word3 = "and "
+word4 = "no "
+word5 = "play "
+word6 = "makes "
+word7 = "Jack "
+word8 = "a "
+word9 = "dull "
+word10 = "boy"
+print("Exercise 1:")
+print(word1+word2+word3+word4+word5+word6+word7+word8+word9+word10+".")
+
+#2)
+#this is a comment
+print("Exercise 2:")
+print(6*(1-2))
+
+#3) comment on other codes
+#4)
+print("Exercise 4:")
+bruce = 6
+print(bruce+4)
+#5)
+P = 10000
+n = 12
+r = 1.08
+t = int(input("How many years will the interest be compounded for? "))
+A = P*((1+(r/n))**(n*t))
+print(A)
+
+#6)
+#7)
+settime = int(input("Please enter the current time in 24-hour clock: "))
+hour = 100
+wait = int(input("How many hours until you want the alarm to go off? "))
+wait = wait*hour
+wait = wait%2400           
+settime = settime + wait
+print("The alarm will go off at " + str(settime))
