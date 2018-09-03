@@ -1,0 +1,21 @@
+import turtle
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+wn.title("Clock!")
+hi = turtle.Turtle()
+hi.shape("turtle")
+hi.color("blue")
+
+hi.stamp()
+size = 80
+hi.penup()
+for i in range(12):
+    hi.forward(size)
+    hi.pendown()
+    hi.forward(20)
+    hi.penup()
+    hi.forward(10)
+    hi.stamp()
+    hi.penup()
+    hi.forward(-110)
+    hi.right(30)
