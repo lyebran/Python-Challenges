@@ -1,0 +1,105 @@
+#Chapter 5 Think like a Computer Scientist
+
+#1)
+def daysoftheweek(n):
+    if n==0:
+        print("Sunday")
+    elif n==1:
+        print("Monday")
+    elif n==2:
+        print("Tuesday")
+    elif n==3:
+        print("Wednesday")
+    elif n==4:
+        print("Thursday")
+    elif n==5:
+        print("Friday")
+    elif n==6:
+        print("Saturday")
+
+daysoftheweek(0)
+
+#2)
+def holiday(s,n):
+    s = int(input("What was the starting day number? "))
+    n = int(input("How many days did you stay? "))
+    n = n%7
+    daysoftheweek((s+n)%7)
+
+holiday(3,137)
+
+#3)
+#i) a <= b
+#ii) a<b
+#iii) a<18 and day !=3
+#iv) a<18 and day==3
+
+#4)
+# 3==3 -> True
+#3!=3 -> False
+#3>=4 ->False
+#not(3<4) ->False
+
+#6)
+xs = [83, 75, 74.9, 70, 69.9, 65, 60, 59.9, 55, 50, 49.9, 45, 44.9, 40, 39.9, 2, 0]
+def mark(xs):
+    for i in xs:
+        if i>=75:
+            print("First")
+        elif i>=70 and i<75:
+            print("Upper Second")
+        elif i>=60 and i<70:
+            print("Second")
+        elif i>=50 and i<60:
+            print("Third")
+        elif i>=45 and i<50:
+            print("F1 Supp")
+        elif i>=40 and i<45:
+            print("F2")
+        elif i<40:
+            print("F3")
+
+mark(xs)
+
+
+#10)
+def find_hypot(a,b):
+    x = (a**2)+(b**2)
+    hyp = x**0.5
+    print("The length of the hypotenuse is: "+str(hyp))
+find_hypot(3,4)
+
+#11)
+def is_rightangled(r,a,t):
+    if abs(t**2 - r**2 - a**2) < 0.0001:
+        print("True")
+    else:
+        print("False")
+
+r = float(input("Please input the length of the first side: "))
+a = float(input("Please input the length of the second side: "))
+t = float(input("Please input the length of the third (longest) side: "))
+is_rightangled(r,a,t)
+
+#12)
+if m>n and m>0:
+    t = m
+    r = n
+    a = o
+elif n>m and n>o:
+    t = n
+    r = m
+    a = o
+elif o>m and o>n:
+    t=o
+    r=m
+    a=n
+is_rightangled(r,a,t)
+    
+    
+#13)
+import math
+a = math.sqrt(2.0)
+print(a, a*a)
+print(a*a == 2.0)
+
