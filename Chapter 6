@@ -1,0 +1,167 @@
+import sys
+
+
+#1)
+def turn_clockwise(direc):
+    direction = ["N","E","S","W","N"]
+    for i in range(0,4):
+        if direc == direction[i]:
+            ndirec = direction[i+1]
+            return ndirec
+
+#2)
+def day_name(num):
+    dayz = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    if num < 7:
+        dayzz = dayz[num]
+        return dayzz
+    else:
+        return
+
+#3)
+def day_num(dnm):
+    nooms = [0,1,2,3,4,5,6]
+    eh = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    if dnm in eh:
+        for g in range(0,7):
+            if dnm == eh[g]:
+                noop = nooms[g]
+                return noop
+    else:
+        return
+
+#4)
+def day_add(daa, noo):
+    daa = day_num(daa)
+    nyu = (daa + noo)%7
+    bb = day_name(nyu)
+    return bb
+    
+#5)
+# It works because the modulus of a negative number in this situation would produce the same result as adding (7 - the negative number)
+
+#6)
+def days_in_month(moonth):
+    mm = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    nm = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if moonth in mm:
+        for j in range(0,12):
+            if moonth == mm[j]:
+                dm = nm[j]
+                return dm
+    else:
+        return
+
+#7)
+def to_secs(h, m, s):
+    tot = (3600*h)+(60*m)+s
+    return tot 
+
+#8)
+def to_secs(h, m, s):
+    tot = int((3600*h)+(60*m)+s)
+    return tot
+
+#9)
+def hours_in(ss):
+    hh = (ss - (ss%3600))/3600
+    return hh
+
+def minutes_in(sss):
+    mmm = ((sss%3600) - ((sss%3600)%60))/60
+    return mmm
+
+def seconds_in(ssss):
+    sssss = ssss%60
+    return sssss
+
+#10. Which of these tests fail? Explain why.
+
+# test(3 % 4 == 0) fails because 3 % 4 == 3
+# test(3 % 4 == 3) passes because 3 % 4 == 3
+# test(3 / 4 == 0) fails because 3/4 is not equivalent to 0
+# test(3 // 4 == 0) passes because the integer result of 3 divided by 4 (originally giving 0.75) is 0
+# test(3+4  *  2 == 14) fails because according to BIDMAS, the first calculation to take place is 4 * 2 followed by 3 + 8 which gives 11
+# test(4-2+2 == 0) fails because the answer is 4
+# test(len("hello, world!") == 13) passes because there are 13 characters in the string "hello, world!"
+
+#11)
+def compare(a, b):
+    if a > b:
+        return 1
+    elif a == b:
+        return 0
+    elif a < b:
+        return -1
+
+#12)
+def hypotenuse(a, b ):
+    c = a**2 + b**2
+    c = c**0.5
+    return c
+
+#13)
+def slope(x1, y1, x2, y2):
+    grad = (y2 - y1)/(x2 - x1)
+    return grad
+
+def intercept(x1, y1, x2, y2):
+    grad = (y2 - y1)/(x2 - x1)
+    c = y1 - (grad * x1)
+    return c
+
+#14)
+def is_even(n):
+    if n%2 == 0:
+        return True
+    else:
+        return False
+
+#15)
+def is_odd(n):
+    if n%2 == 1:
+        return True
+    else:
+        return False
+
+def is_odd(n):
+    er = is_even(n)
+    if er == True:
+        er = False
+        return er
+    elif er == False:
+        er = True
+        return er
+
+#16)
+def is_factor(f, n):
+    if n%f == 0:
+        return True
+    else:
+        return False
+
+#17)
+def is_multiple(m, n):
+    if m%n == 0:
+        return True
+    else:
+        return False
+
+def is_multiple(m, n):
+    rr = is_factor(n,m)
+    return rr
+
+#18)
+def f2c(t):
+    t = (t-32)*(5/9)
+    t = round(t)
+    return t
+
+#19)
+
+def c2f(t):
+    t = (t*9/5)+32
+    t = round(t)
+    return t
+
+test_suite()        
