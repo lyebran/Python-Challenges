@@ -1,0 +1,235 @@
+#Chapter 7
+#1)
+numbers = [-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9]
+odd = []
+print(str(numbers))
+def OddNumberCounter(numbers):
+    for i in numbers:
+        if i % 2 == 1:
+            odd.append(i)
+    print("there are " + str(len(odd)) + " odd numbers")
+
+OddNumberCounter(numbers)
+
+#2)
+even = []
+def EvenNumberSum(numbers):
+    for i in numbers:
+        if i % 2 == 0:
+            even.append(i)
+    print("the sum of the even numbers is " + str(sum(even)))
+
+EvenNumberSum(numbers)
+
+#3)
+
+negative = []
+def NegativeNumberSum(numbers):
+    for i in numbers:
+        if i % -1 == 0:
+            negative.append(i)
+    print("the sum of all the negative numbers is " + str(sum(negative)))
+
+NegativeNumberSum(numbers)
+
+#4)
+words = ["low","befitting","amusing","drain","sam","talk","determined","probable","succinct",
+         "incredible","annual","island","learn"]
+length5 = []
+def FiveLetterwords(words):
+    for i in words:
+        if len(i) == 5:
+            length5.append(i)
+    print(str(words))
+    print(str(length5))
+    print("The amount of words with 5 letters is " + str(len(length5)))
+
+FiveLetterwords(words)
+
+#5)
+def firstsum(m) == 0:
+    if even_list(m) == 0:
+        return sum(m)
+    else:
+        for i in list:
+            if i % 2 == 0:
+                list.remove(i)
+                break
+        return sum(m)
+print(psum(numbers))
+
+#6)
+def sam(n):
+    count = 0
+    if "sam" not in n:
+        return len(n):
+    else:
+        for i in n:
+            count = count + 1
+            if i == "sam":
+                break
+        return(count)
+print(sam(words))
+
+#7)
+
+def sqrt(n):
+    approx = n/2
+    while True:
+        better = (approx + n/approx)/2
+        print(better)
+        if abs(approx - better) < 0.001:
+            return better
+        approx = beter
+print(sqrt(25))
+
+#8)
+
+def print_multiples(n,m):
+    for i in range(1,m):
+        print(n*i, end="  ")
+    print()
+
+def print_table(m):
+    for i in range(1,m+1):
+        print_multiples(i,i+1)
+
+print_mult_table(7)
+
+#9)
+
+def print_triangular_numbers(n):
+    for i in range(1, n+1):
+        tri = 0
+        for a in range(1, i+1):
+            tri += a
+        print(str(i) + "    " + str(tri))
+print_triangular_numbers(5)
+
+#10)
+
+def is_prime(n):
+    for i in range(2,n):
+        if n%i == 0:
+            return False
+
+        return True
+
+import sys
+
+def test(dpass):
+    linenumber = sys._getframe(1).f_lineno
+    if dpass:
+        msg = "Test at line 0 is ok.".format(linenumber)
+    else:
+        msg = ("Test at line 0 is not ok.".format(linenumber))
+    print(msg)
+test(is_prime(11))
+test(not is_prime(35))
+test(is_prime(1992321))
+
+#14)
+
+def num_digits(n):
+    count = 0
+    n = abs(n)
+    if n == 0:
+        return 1
+    while n != 0:
+        count = count + 1
+        n = n//10
+    return count
+import sys
+
+test(num_digits(0) == 1)
+test(num_digits(-12345) == 5)
+
+#15)
+def num_even_digits(n):
+    count = 0
+    n = abs(n)
+    if n==0:
+        return 1
+    while n != 0:
+        if n%2 == 0:
+            count = count + 1
+        n = n//10
+    return count
+
+test(num_even_digits(123456) == 3)
+test(num_even_digits(2468) == 4)
+test(num_even_digits(1357) == 0)
+test(num_even_digits(0) == 1)
+
+#16)
+
+def sum_of_squares(x):
+    count = 0
+    if len(x) == 0:
+        return 0
+    for i in x:
+        count += i**2
+    return count
+
+test(sum_of_squares([2, 3, 4]) == 29)
+test(sum_of_squares([ ]) == 0)
+test(sum_of_squares([2, -3, 4]) == 29)
+
+
+#17)
+
+def play_once(human_plays_first):
+    """
+       Must play one round of the game. If the parameter
+       is True, the human gets to play first, else the
+       computer gets to play first.  When the round ends,
+       the return value of the function is one of
+       -1 (human wins),  0 (game drawn),   1 (computer wins).
+    """
+    # This is all dummy scaffolding code right at the moment...
+    import random                  # See Modules chapter ...
+    rng = random.Random()
+    # Pick a random result between -1 and 1.
+    result = rng.randrange(-1,2)
+    print("Human plays first={0},  winner={1} "
+                       .format(human_plays_first, result))
+    return result
+
+def start(play):
+    if play %2 == 0:
+        return True
+    else:
+        return False
+
+def scoree(result,comp,hum,play):
+    if result == 1:
+        print("I win!")
+        comp.append(1)
+    elif result == 0:
+        print("Game drawn!")
+        tie.append(1)
+    elif result == -1:
+        print("You win!")
+        hum.append(1)
+    play += 1
+    print(hum)
+    print(comp)
+    per = (len(hum)/(len(hum)+len(comp)+len(tie)))*100
+    print("Percentage of human wins: " +str(per)+"%")
+    print("")
+
+play = 0
+hum = []
+tie = []
+comp = []
+while True:
+    scoree(play_once(start(play)),comp,hum,play)
+    again = str(input("Do you want to play again? "))
+    if str.lower(again) in ["yes", "y"]:
+        play += 1
+    else:
+        print("Goodbye")
+        break
+
+    
+
