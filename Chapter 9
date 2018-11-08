@@ -1,0 +1,30 @@
+#Python Challenges Chapter 9 (Think like a CS)
+
+year_born = ("Paris Hilton", 1981)
+julia = ("Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta", "Georgia")
+print(julia[2])
+julia = julia[:3] + ("Eat Pray Love", 2010) + julia[5:]
+print(julia)
+
+b = ("Bob", 19, "CS") #tuple packing
+(name, age, studies) = b #tuple unpacking
+print(name)
+print(age)
+print(studies)
+#1) We've said nothing in this chapter about whether you can pass tuples
+#as arguments to a function. Construct a small python example to test whether
+#this is possible, and write up your findings
+
+def ranfunction(a):
+    a = ("this", "is", "a", "function")
+    print(a)
+
+ranfunction(a)
+#not possible
+
+#2)Is a pair a generalisation of a tuple, or is a tuple a generalisation of a pair?
+#-> a pair is a generalisation of a tuple
+
+#3)Is a pair a kind of tuple, or is a tuple a kind of pair
+#-> A pair is a kind of tuple.
+
