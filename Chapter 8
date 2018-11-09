@@ -1,41 +1,41 @@
 #1)
 
-# >>> "Python"[1]
+# "Python"[1]
 # "y"
 
-# >>> "Strings are sequences of characters."[5]
+# "Strings are sequences of characters."[5]
 # "g"
 
-# >>> len("wonderful")
+#len("wonderful")
 # 9
 
-# >>> "Mystery"[:4]
+#"Mystery"[:4]
 # "Myst"
 
-# >>> "p" in "Pineapple"
+# "p" in "Pineapple"
 # True
 
-# >>> "apple" in "Pineapple"
+#"apple" in "Pineapple"
 # True
 
-# >>> "pear" not in "Pineapple"
+# "pear" not in "Pineapple"
 # True
 
-# >>> "apple" > "pineapple"
+#  "apple" > "pineapple"
 # False
 
-# >>> "pineapple" < "Peach"
+# "pineapple" < "Peach"
 # False
 
 #2)
 
-prefixes = "JKLMNOPQ"
-suffix = "ack"
+pre = "JKLMNOPQ"
+suf = "ack"
 
-for letter in prefixes:
+for letter in pref:
     if letter in ["O","Q"]:
         letter += "u"
-    print(letter + suffix)
+    print(letter + suf)
 
 #3)
 def count_letters(string, letter):
@@ -51,18 +51,17 @@ def count_letters(string, letter):
     return count
 
 #5)
-# Write a function which removes all punctuation from the string, breaks the string into a list of words, and counts the number of words in your text that contain the letter “e”. Your program should print an analysis of the text like this:
 
 import string
 
 def remove_punctuation(s):
-    s_without_punct = ""
+    s_not_punc = ""
     for letter in s:
         if letter not in string.punctuation:
-            s_without_punct += letter
-    return s_without_punct
+            s_not_punc += letter
+    return s_not_punc
 
-def count_e(text):
+def counte(text):
     count = 0
     tot = 0
     text = remove_punctuation(text)
@@ -74,17 +73,14 @@ def count_e(text):
     per = str(per)+"%"
     print('Your text contains %d words, of which %d (%s) contain an "e".' % (tot, count, per))
 
-count_e("""fkeokfowkmdmeigrijgeermwmejgiewodmwv dundundunDUNDUNDUN ekdoskdmwmfneowpsek enrichment is so fun dundundUN boom boom wow what a gr8901-1-1123 time to be alive in this industryyyy yes indeed lets do things prOPERLY twenty one hundred million nerds ohhoho flat earthers?? in enrichment???? more likely than you thiNK!!!! how is the UN plus henderson doing these days hmmmm are people living longer or are we all just born earlier how dAMN ejweif natural geographical lifestyle smifestyle ohhoho kwokdwokfejwifjwifejiw A MAP!!!!! im the map im the map wow people are actually so concentrated wait n vm oh wow board reading i bet everything is going to be c okay this right here is a psychic PREDICTION hmmmm arent there like LAWS and stuff wow i love the young life 2002 yeet yet doombabdoom book book ohhoho endangeration celebration rip rhinos dundundun opinion swaging left and right nyooming across the skyyyy electricity more like electrical titricity ohhoho lets make a competition out of this ooooo so this is climate change""")
-
 #6)
-def multab():
+def mult():
     layout = "{0:>5}{1:>5}{2:>5}{3:>5}{4:>5}{5:>5}{6:5}{7:5}{8:5}{9:5}{10:5}{11:5}"
     print(layout.format("1","2","3","4","5","6","7","8","9","10","11","12"))
     print("  :--------------------------------------------------")
     for n in range(1,13):
         print(layout.format(n, n*2, n*3, n*4, n*5, n*6, n*7, n*8, n*9, n*10, n*11, n*12))
-
-multab()
+mult()
 
 #7)
 import sys
@@ -180,8 +176,6 @@ def remove(c, s):
                 hi += s[0:i] + s[(i+g+1):]
                 return hi
 
-test(remove("an", "banana") == "bana")
-test(remove("cyc", "bicycle") == "bile")
 test(remove("iss", "Mississippi") == "Missippi")
 test(remove("eggs", "bicycle") == "bicycle")
 
@@ -189,7 +183,5 @@ test(remove("eggs", "bicycle") == "bicycle")
 def remove_all(c, s):
     return s.replace(c,"")
 
-test(remove_all("an", "banana") == "ba")
-test(remove_all("cyc", "bicycle") == "bile")
 test(remove_all("iss", "Mississippi") == "Mippi")
 test(remove_all("eggs", "bicycle") == "bicycle")
