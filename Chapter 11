@@ -1,0 +1,52 @@
+#Chapter 11 Exercises
+#1)
+print(list(range(10,0,-2)))
+
+#3) Draw a state snapshot for a and b before and after the third line of the
+#following Python code is executed:
+
+a = [1,2,3]
+b = a[:]
+b[0] = 5
+
+# a --> 1,2,3
+# b --> 5
+#^before
+# a --> 1,2,3
+# b --> 5,2,3
+# ^after
+
+#4)
+this = ["I", "am", "not", "a", "crook"]
+that = ["I", "am", "not", "a", "crook"]
+print("Test 1: {0}".format(this is that))
+that = this
+print("Test 2: {0}".format(this is that))
+
+#Chapter 11 Q5
+#Vectors
+
+u = int(input("Enter the value of x: "))
+v = int(input("Enter the value of y: "))
+
+def add_vectors(u, v):
+    a = int(input("Enter the second value of x: "))
+    b = int(input("Enter the second value of y: "))
+    u = u + a
+    v = v + b
+    print(u, v)
+
+add_vectors(u, v)
+
+#6)
+def scalar_mult(s,v):
+    l = []
+    for i in v:
+        l.append(s*i)
+    return l
+  
+test(scalar_mult(5, [1, 2]) == [5, 10])
+test(scalar_mult(3, [1, 0, -1]) == [3, 0, -3])
+test(scalar_mult(7, [3, 0, 5, 11, 2]) == [21, 0, 35, 77, 14])
+
+#7)
