@@ -1,0 +1,13 @@
+#Chapter 12
+#1)
+#a)
+import calendar
+cal = calendar.TextCalendar()    #Create and instance
+cal.pryear(2012)                 #What happens here?
+
+#b)
+import calendar
+cal = calendar.TextCalendar(3)  
+cal.pryear(2012)    
+
+#c)
