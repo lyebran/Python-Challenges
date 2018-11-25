@@ -11,3 +11,47 @@ cal = calendar.TextCalendar(3)
 cal.pryear(2012)    
 
 #c)
+mon = calendar.TextCalendar()
+mon.prmonth(2019,10)
+
+#d)
+d = calendar.LocaleTextCalendar(6, "SPANISH")
+d.pryear(2012)
+
+d = calendar.LocaleTextCalendar(6, "MALAY")
+d.pryear(2012)
+
+d = calendar.LocaleTextCalendar(6, "CHINESE")
+d.pryear(2012)
+
+#e)
+print(calendar.isleap(2012))
+print(calendar.isleap(2013))
+#it is a boolean function that takes the input of a year and returns True if the year is a leap year (false if not)
+
+#2)
+#a)
+
+print(help("math"))
+#49 functions
+
+#b)
+ceil(x, /)
+  Return the ceiling of x as an Integral
+  
+floor(x, /)
+Return the floor of x as an Integral
+
+#c) Describe how we have been computing the same value as math.sqrt without using the math module.
+
+# Either by using a recursive function which slowly calculates itself closer and closer to the true sqrt value or by using the indicies mathematical operation **(1/2)
+
+#d) Two data constants in the math module:
+# e, infinity
+
+#3) copy module, deepcopy:
+
+print(help("copy"))
+# Deepcopy inserts copies of each object within an old compound object into a new one. It is different from a shallow copy which inserts the same objects into a new compound, causing any changes in the original compound to too reflect in the new one
+
+
