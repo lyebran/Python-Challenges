@@ -1,0 +1,55 @@
+
+#1) Write a program that reads a file and writes out a new file with the lines in reversed order (i.e. the first line in the old file becomes the last one in the new file.)
+
+myfile = open("ExerciseUno.txt", "w")
+
+lines = []
+read = open("ExerciseUno.txt", "r")
+while True:
+    line = read.readline()
+    if len(line) == 0:
+        break
+    lines.append(line)
+
+for i in lines[::-1]:
+    myfile.write(i)
+
+myfile.close()
+read.close()
+
+#2) Write a program that reads a file and prints only those lines that contain the substring snake
+
+def filter(file):
+  infile = open(file, "r")
+  while True:
+    text = infile.readline()
+    if len(text) == 0:
+      break
+    if "snake" in text:
+      print(text)
+  infile.close()
+  
+  #3) Write a program that reads a text file and produces an output file which is a copy of the file, except the first five columns of each line contain a four digit line number, followed by a space. Start numbering the first line in the output file at 1. Ensure that every line number is formatted to the same width in the output file. Use one of your Python programs as test data for this exercise: your output should be a printed and numbered listing of the Python program.
+
+  def exercisethree(x):
+    if int(x) < 10:
+        y = "000" + x
+    elif int(x) < 100:
+        y = "00" + x
+    elif int(x) < 1000:
+        y = "0" + x
+    return y
+    
+  
+  #4) Write a program that undoes the numbering of the previous exercise: it should read a file with numbered lines and produce another file without line numbers.
+
+in = open("ExerciseTres.txt","r")
+out = open("ExerciseFour.txt","w")
+while True:
+    line = str(in.readline())
+    if len(line) == 0:
+        break  
+    out.write(line[5:])
+
+in.close()
+out.close()
