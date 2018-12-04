@@ -1,0 +1,230 @@
+#1) The section in this chapter called Alice in Wonderland, again! started with the observation that the merge algorithm uses a pattern that can be reused in other situations. Adapt the merge algorithm to write each of these functions, as was suggested there:
+
+#a)Return only those items that are present in both lists.
+
+def find_unknowns_merge_pattern_a(vocab, wds):
+    """ Both the vocab and wds must be sorted.  Return a new
+        list of words from wds that do not occur in vocab.
+    """
+
+    result = []
+    xi = 0
+    yi = 0
+
+    while True:
+        if xi >= len(vocab):
+            result.extend(wds[yi:])
+            return result
+
+        if yi >= len(wds):
+            return result
+
+        if vocab[xi] == wds[yi]:  # Good, word exists in vocab
+            result.append(wds[yi])
+            yi += 1
+
+        elif vocab[xi] < wds[yi]: # Move past this vocab word,
+            xi += 1
+
+        else:                     # Got word that is not in vocab
+            yi += 1
+
+all_words = get_words_in_book("AliceInWonderland.txt")
+all_words.sort()
+book_words = remove_adjacent_dups(all_words)
+#missing_words = find_unknowns_merge_pattern_a(bigger_vocab, book_words)
+#print(missing_words)
+
+#b)Return only those items that are present in the first list, but not in the second.
+
+def find_unknowns_merge_pattern_b(wds, vocab):
+    """ Both the vocab and wds must be sorted.  Return a new
+        list of words from wds that do not occur in vocab.
+    """
+
+    result = []
+    xi = 0
+    yi = 0
+
+    while True:
+        if xi >= len(vocab):
+            result.extend(wds[yi:])
+            return result
+
+        if yi >= len(wds):
+            return result
+
+        if vocab[xi] == wds[yi]:  # Good, word exists in vocab
+            yi += 1
+
+        elif vocab[xi] < wds[yi]: # Move past this vocab word,
+            xi += 1
+
+        else:                     # Got word that is not in vocab
+            result.append(wds[yi])
+            yi += 1
+
+all_words = get_words_in_book("AliceInWonderland.txt")
+all_words.sort()
+book_words = remove_adjacent_dups(all_words)
+#missing_words = find_unknowns_merge_pattern_b(bigger_vocab, book_words)
+#print(missing_words)
+
+#c)Return only those items that are present in the second list, but not in the first.
+
+def find_unknowns_merge_pattern_c(vocab, wds):
+    """ Both the vocab and wds must be sorted.  Return a new
+        list of words from wds that do not occur in vocab.
+    """
+
+    result = []
+    xi = 0
+    yi = 0
+
+    while True:
+        if xi >= len(vocab):
+            result.extend(wds[yi:])
+            return result
+
+        if yi >= len(wds):
+            return result
+
+        if vocab[xi] == wds[yi]:  # Good, word exists in vocab
+            yi += 1
+
+        elif vocab[xi] < wds[yi]: # Move past this vocab word,
+            xi += 1
+
+        else:                     # Got word that is not in vocab
+            result.append(wds[yi])
+            yi += 1
+
+all_words = get_words_in_book("AliceInWonderland.txt")
+all_words.sort()
+book_words = remove_adjacent_dups(all_words)
+#missing_words = find_unknowns_merge_pattern_c(bigger_vocab, book_words)
+#print(missing_words)
+
+#d)Return items that are present in either the first or the second list.
+
+def find_unknowns_merge_pattern_d(wds, vocab):
+    """ Both the vocab and wds must be sorted.  Return a new
+        list of words from wds that do not occur in vocab.
+    """
+
+    result = []
+    xi = 0
+    yi = 0
+
+    while True:
+        if xi >= len(vocab):
+            result.extend(wds[yi:])
+            return result
+
+        if yi >= len(wds):
+            result.extend(vocab[xi:])
+            return result
+
+        if vocab[xi] == wds[yi]:  # Good, word exists in vocab
+            yi += 1
+
+        elif vocab[xi] < wds[yi]: # Move past this vocab word,
+            xi += 1
+
+        else:                     # Got word that is not in vocab
+            result.append(wds[yi])
+            yi += 1
+
+all_words = get_words_in_book("AliceInWonderland.txt")
+all_words.sort()
+book_words = remove_adjacent_dups(all_words)
+#missing_words = find_unknowns_merge_pattern_d(bigger_vocab, book_words)
+#print(missing_words)
+
+#e)Return items from the first list that are not eliminated by a matching element in the second list. In this case, an item in the second list “knocks out” just one matching item in the first list. This operation is sometimes called bagdiff.
+
+def bagdiff(xs, ys):
+    """ merge sorted lists xs and ys. Return a sorted result """
+    xi = 0
+    yi = 0
+    result = []
+
+    while True:
+        if xi >= len(xs):
+            return result          # And we're done.
+
+        if yi >= len(ys):
+            result.extend(xs[xi:])
+            return result
+
+        # Both lists still have items, copy smaller item to result.
+        if xs[xi] < ys[yi]:
+            result.append(xs[xi])
+            xi += 1
+        elif xs[xi] == ys[yi]:
+            xi += 1
+            yi += 1
+        else:
+            yi += 1
+            
+#5)
+#b)
+import sys
+
+def lotto(t, d):
+    same = 0
+    for i in t:
+        if i in d:
+            same += 1
+    return same
+
+test(lotto([42,4,7,11,1,13], [2,5,7,11,13,17]) == 3)
+
+#c)
+
+def lotto_matches(d,t):
+    res = []
+    for i in t:
+        res.append(lotto_match(d,i))
+    return res
+
+test(lotto_matches([42,4,7,11,1,13], my_tickets) == [1,2,3,1])
+
+#d)
+
+def primes(n):
+    prime = 6
+    for i in n:
+        for j in range(2,i):
+            if i % j == 0 and j != 1:
+                prime -= 1
+            else:
+                break
+    return prime
+
+test(primes([42, 4, 7, 11, 1, 13]) == 3)
+
+#e)
+def prime_misses(t):
+    prime = []
+    x = []
+    for l in t:
+        for i in l:
+            p = True
+            for j in range(2,i):
+                if i % j == 0:
+                    p = False
+            if p:
+                prime.append(i)
+    ap = []
+    for i in range(2,49):
+            p = True
+            for j in range(2,i):
+                if i % j == 0:
+                    p = False
+            if p:
+                ap.append(i)
+    for i in ap:
+        if i not in prime:
+            x.append(i)
+    return x
