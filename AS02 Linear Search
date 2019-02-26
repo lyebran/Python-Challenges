@@ -1,0 +1,18 @@
+import random
+position = 0
+found = False
+List = []
+def randomnumbers(x):
+    for i in range(x):
+        randomnumber = random.randint(0,100)
+        List.append(randomnumber)
+randomnumbers(12)
+
+item = int(input("enter item you want: "))
+while position<len(List) and not found:
+    if List[position] == item:
+        found = True
+        print(str(List[position]) + " =>" + " True")
+    else:
+        print(str(List[position]) + " =>" + " False")
+    position += 1
