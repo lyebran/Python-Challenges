@@ -1,0 +1,13 @@
+import random
+numberlist = []
+for i in range(9):
+    numberlist.append(random.randint(0,100))
+print(numberlist)
+for i in range(len(numberlist)):
+    for j in range(0, len(numberlist) -1):
+        if numberlist[j] > numberlist[j+1]:
+            temp = numberlist[j]
+            numberlist[j] = numberlist[j+1]
+            numberlist[j+1] = temp
+    print(numberlist)
+
